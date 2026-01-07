@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+/* ===== Fade-in Animation ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Container ===== */
+.whyme-container {
+  background: #f8f8f8;
+  padding: 80px 2rem 4rem 250px;
+  color: #333;
+  min-height: auto;
+  font-family: "Cairo", sans-serif;
+}
+
+/* ===== Header ===== */
+.whyme-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.whyme-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.underline {
+  width: 90px;
+  height: 4px;
+  background-color: #F7C948;
+  margin: 0.6rem auto 1.5rem auto;
+  border-radius: 10px;
+}
+
+.whyme-text {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  text-align: center;
+}
+
+.highlighted-line {
+  font-weight: 700;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.ai-projects {
+  color: #F7C948;
+}
+
+/* ===== Cards Section ===== */
+.whyme-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.whyme-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.whyme-card.primary {
+  background: #F7C948;
+  color: #000;
+}
+
+.whyme-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.whyme-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.whyme-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: #F7C948;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #FFC312;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+
+.card-icon-inline {
+  font-size: 1.5rem;
+  color: #FFC312;
+  margin-left: 0;
+}
+
+.whyme-card.primary .card-title {
+  color: #fff;
+}
+
+.whyme-card.primary .card-icon-inline {
+  color: #fff;
+}
+
+/* Hover effect for inline icons */
+.whyme-card .card-icon-inline:hover {
+  transform: scale(1.3);
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Media Queries ===== */
+
+
+@media (max-width:768px) {
+  .whyme-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* هنا تم تعديل الكروت لتكون 2 في صف */
+  .whyme-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 كروت في كل صف */
+    gap: 15px;
+    justify-items: center;
+    margin-top: 20px;
+  }
+
+  .whyme-card {
+    max-width: 100%;
+    padding: 15px 15px;
+    flex: none;
+    box-sizing: border-box;
+    text-align: center;
+    min-height: auto; /* الارتفاع يتكيف مع المحتوى */
+  }
+
+  .whyme-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .whyme-card p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
+
+  .card-icon-inline {
+    font-size: 1rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,160 @@
+.logo h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.logo-code {
+  vertical-align: super;
+  font-size: 14px;
+  color: #F7C948;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: -6px;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 200px;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  box-shadow: 2px 0 5px rgba(160, 159, 159, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  transition: color 0.3s;
+  font-family: 'cairo';
+  letter-spacing: 1.5px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #F7C948;
+}
+
+.sidebar-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;              
+  transform: translateX(-50%); 
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  width: auto;             
+}
+
+.sidebar-footer a {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.sidebar-footer a:hover {
+  color: #F7C948;
+}
+.menu-toggle {
+  display: none; /* مخفي افتراضياً */
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+
+/* ================= MOBILE DESIGN ================= */
+@media (max-width: 768px) {
+
+  .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 68px;
+  background-color: #000000; /* أسود */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.2rem;
+  z-index: 2000;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 
+              0 2px 4px rgba(0, 0, 0, 0.3);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: linear-gradient(to bottom, #111111, #000000);
+}
+
+
+  .logo h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .logo-code {
+    font-size: 11px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 36px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background-color: #000000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.35s ease-in-out;
+  }
+
+ 
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  .sidebar-footer {
+    position: absolute;       /* مستقل عن flex في .sidebar */
+    bottom: 20px;             /* بعيد قليلًا عن أسفل الشاشة */
+    left: 50%;                /* نقطة المنتصف */
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: auto;
+  }
+}
+

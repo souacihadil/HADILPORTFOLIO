@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+.projects-page {
+  padding: 50px;
+  padding-left: 250px;
+  background: #f5f7fa;
+  color: #333;
+  font-family: "Cairo", sans-serif;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.underline {
+  width: 80px;
+  height: 4px;
+  background-color: #FFD700;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+}
+
+.projects-grid.big {
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
+.projects-grid.small {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.projects-grid.html {
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+}
+
+.projects-grid.html .project-card {
+  height: 500px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.projects-grid.big .project-card {
+  height: 280px;
+}
+
+.projects-grid.small .project-card {
+  height: 320px;
+}
+
+.projects-grid.html .project-card {
+  height: 420px;
+}
+
+.project-card img,
+.project-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card.video-card .overlay {
+  display: none;
+}
+
+.project-card video:hover {
+  transform: none !important;
+}
+
+.project-card:hover img,
+.project-card:hover video {
+  transform: scale(1.05);
+}
+
+.project-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.project-card .overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project-card .overlay a {
+  padding: 8px 20px;
+  background-color: #FFD700;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.project-card .overlay a:hover {
+  background-color: #FFC700;
+}
+
+.project-card.video-card .overlay {
+  display: none;
+}
+
+.project-card.video-card:hover .overlay {
+  opacity: 0 !important;
+}
+
+.projects-grid.long-screenshots {
+  display: flex;
+  height: 650px;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.projects-grid.long-screenshots .project-card img {
+  height: 600px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  /* ===== البادينغ العام للصفحة ===== */
+  .projects-page {
+    padding: 20px 1rem 40px 1rem; /* top right bottom left */
+    background: #f5f7fa;
+  }
+
+  /* ===== العناوين ===== */
+  .page-header h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* ===== مشاريع الفيديو (المشروعين الأولين) ===== */
+  .projects-grid.videos {
+    display: grid;
+    grid-template-columns: 1fr; /* كل فيديو صف كامل */
+    gap: 15px;
+  }
+
+  .projects-grid.videos .project-card {
+    height: 180px;
+    border-radius: 10px; /* حواف مستديرة */
+    overflow: hidden;
+  }
+
+  .projects-grid.videos .project-card img,
+  .projects-grid.videos .project-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projects-grid.videos .project-card:hover img,
+  .projects-grid.videos .project-card:hover video {
+    transform: scale(1.05);
+  }
+
+  /* ===== المشاريع العادية ===== */
+  .projects-grid.normal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* صفوف مشروعين */
+    gap: 10px; /* مسافة بين المشاريع */
+  }
+
+  .projects-grid.normal .project-card {
+    height: 150px; /* حجم أصغر للصور */
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .projects-grid.normal .project-card img,
+  .projects-grid.normal .project-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projects-grid.normal .project-card:hover img,
+  .projects-grid.normal .project-card:hover video {
+    transform: scale(1.05);
+  }
+
+  /* ===== overlay ===== */
+  .project-card .overlay h3 {
+    font-size: 1rem;
+  }
+
+  .project-card .overlay a {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  /* ===== long-screenshots (سلايدر) ===== */
+  .projects-grid.long-screenshots {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .projects-grid.long-screenshots .project-card img {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* ===== نصوص وصف المشروع ===== */
+  .project-card p {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/home.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Cairo", sans-serif;
+  padding-left: 200px;
+}
+
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.subtitle-name {
+  font-size: 2.5rem;
+  margin-top: 6px;
+  color: white;
+  font-weight: 600;
+}
+.subtitle-name span{
+    color: #f5c542;
+}
+
+.subtitle-role {
+  font-size: 1.5rem;
+  margin-top: 3px;
+  color: #ccc;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: transparent;
+  border: 2px solid #f5c542;
+  color: #f5c542;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  width: auto;
+  color: #f5c542; /* لون الخط */
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .home {
+    justify-content: center; /* يجعل النص في منتصف الارتفاع */
+    align-items: center;     /* يجعل النص في منتصف العرض */
+    padding-left: 20px;      /* يمكن تركها صغيرة */
+    padding-top: 0;          /* لا حاجة لمسافة كبيرة من الأعلى */
+    text-align: center;      /* للتأكيد على المحاذاة */
+  }
+
+  .title {
+    font-size: 1.4rem;
+    padding-top: 0;          /* إزالة أي padding إضافي */
+  }
+
+  .subtitle-name {
+    font-size: 1.6rem;
+  }
+
+  .subtitle-role {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 6px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+

@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+.contact-section {
+  min-height: 100vh;
+  padding-left: 280px; /* مساحة واضحة للـ navbar */
+  padding-right: 180px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-family: "Cairo", sans-serif;
+}
+
+.contact-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 80px;
+  align-items: center;
+}
+
+/* LEFT */
+.contact-left {
+  max-width: 600px;
+}
+
+.contact-label {
+  color: #f5c542;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.contact-title {
+  font-size: 3.2rem;
+  margin: 14px 0;
+}
+
+.line {
+  width: 60px;
+  height: 3px;
+  background: #f5c542;
+  margin: 20px 0;
+}
+
+.contact-text {
+  color: #ccc;
+  line-height: 1.9;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+/* FLOATING LINKS */
+.contact-links {
+  display: flex;
+  gap: 24px;
+}
+
+.contact-links a {
+  color: #f5c542;
+  font-size: 1.6rem;
+  animation: float 3s ease-in-out infinite;
+  transition: 0.3s ease;
+}
+
+.contact-links a:nth-child(2) { animation-delay: .3s; }
+.contact-links a:nth-child(3) { animation-delay: .6s; }
+
+.contact-links a:hover {
+  color: #fff;
+  transform: translateY(-6px);
+}
+
+/* RIGHT */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+  padding: 14px 0;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-group label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #777;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+  top: -10px;
+  font-size: 0.9rem;
+  color: #f5c542;
+}
+
+.input-group textarea {
+  min-height: 130px;
+}
+
+/* BUTTON */
+.send-btn {
+  align-self: flex-start;
+  padding: 14px 44px;
+  background: #f5c542;
+  border: none;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.send-btn:hover {
+  background: #e0b737;
+  transform: translateY(-2px);
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+/* ===== Tablet / Medium Screens ===== */
+@media (max-width: 1024px) {
+  .contact-section {
+    padding-left: 200px;  /* أقل من Desktop */
+    padding-right: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr 1fr; /* النص + النموذج متساويان */
+    gap: 40px;
+  }
+
+  .contact-left {
+    max-width: 100%;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .line {
+    width: 50px;
+  }
+
+  .contact-text {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+/* ===== Mobile / <=768px ===== */
+@media (max-width: 768px) {
+  .contact-section {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: block;
+  }
+
+  .contact-wrapper {
+    display: block;
+    gap: 40px;
+  }
+
+  .contact-left {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .contact-label {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+
+  .line {
+    width: 50px;
+    margin: 15px 0;
+  }
+
+  .contact-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .contact-links {
+    gap: 15px;
+    justify-content: flex-start;
+  }
+
+  .contact-links a {
+    font-size: 1.4rem;
+  }
+
+  .contact-form {
+    gap: 20px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    font-size: 0.95rem;
+    padding: 12px 0;
+    border-bottom: 1px solid #555;
+  }
+
+  .input-group textarea {
+    min-height: 100px;
+  }
+
+  .input-group label {
+    font-size: 0.75rem;
+  }
+
+  .input-group input:focus + label,
+  .input-group input:valid + label,
+  .input-group textarea:focus + label,
+  .input-group textarea:valid + label {
+    font-size: 0.8rem;
+  }
+
+  .send-btn {
+    padding: 12px 32px;
+    font-size: 0.7rem;
+  }
+}
+
